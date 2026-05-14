@@ -1,4 +1,4 @@
-import "dotenv/config";
+// No dotenv needed for Railway
 import { defineConfig } from "prisma/config";
 
 export default defineConfig({
