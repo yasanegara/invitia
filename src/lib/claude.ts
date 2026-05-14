@@ -1,0 +1,10 @@
+import Anthropic from '@anthropic-ai/sdk'
+
+export const anthropic = new Anthropic({
+  apiKey:  process.env.ANTHROPIC_API_KEY,
+  baseURL: process.env.ANTHROPIC_BASE_URL,
+})
+
+export const MODELS = {
+  generate: process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-4-6',
+} as const
