@@ -1,8 +1,9 @@
 import { NextResponse }              from 'next/server'
 import { z }                         from 'zod'
 import { auth }                      from '@/lib/auth'
-import { anthropic, MODELS }         from '@/lib/claude'
-import { SYSTEM_PROMPT, buildUserPrompt, type MediaAssets } from '@/lib/prompt'
+import { anthropic }                  from '@/lib/claude'
+import { buildUserPrompt, type MediaAssets } from '@/lib/prompt'
+import { getSystemPrompt, getAIModel, getAIMaxTokens } from '@/lib/config'
 import { db }                        from '@/lib/db'
 import { detectProgress }            from '@/lib/generate-progress'
 import type { InvitationParams, InvitationJenis } from '@/types'
@@ -134,15 +135,15 @@ export async function PATCH(
       let accumulated = ''
       let lastPercent = 3
 
+      const [systemPrompt, model, maxTokens] = await Promise.all([
+        getSystemPrompt(), getAIModel(), getAIMaxTokens(),
+      ])
+
       const aiStream = anthropic.messages.stream({
-        model:      MODELS.generate,
-        max_tokens: 32000,
-        system: [{
-          type:          'text',
-          text:          SYSTEM_PROMPT,
-          cache_control: { type: 'ephemeral' },
-        }],
-        messages: [{ role: 'user', content: buildUserPrompt(typedParams, media) }],
+        model,
+        max_tokens: maxTokens,
+        system:     systemPrompt,
+        messages:   [{ role: 'user', content: buildUserPrompt(typedParams, media) }],
       })
 
       aiStream.on('text', (text) => {

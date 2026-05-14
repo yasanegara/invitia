@@ -1,4 +1,5 @@
-import { db } from './db'
+import { db }           from './db'
+import { SYSTEM_PROMPT } from './prompt'
 
 export async function getConfig(key: string, defaultValue: string): Promise<string> {
   const row = await db.appConfig.findUnique({ where: { key } })
@@ -11,6 +12,21 @@ export async function setConfig(key: string, value: string): Promise<void> {
     update: { value },
     create: { key, value },
   })
+}
+
+export async function getSystemPrompt(): Promise<string> {
+  const row = await db.appConfig.findUnique({ where: { key: 'ai_system_prompt' } })
+  return row?.value?.trim() || SYSTEM_PROMPT
+}
+
+export async function getAIModel(): Promise<string> {
+  const row = await db.appConfig.findUnique({ where: { key: 'ai_model' } })
+  return row?.value?.trim() || process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6'
+}
+
+export async function getAIMaxTokens(): Promise<number> {
+  const row = await db.appConfig.findUnique({ where: { key: 'ai_max_tokens' } })
+  return parseInt(row?.value || '32000', 10) || 32000
 }
 
 // IDR per 1M tokens — defaults approximate claude-sonnet at 15k IDR/USD

@@ -9,6 +9,7 @@ const NAV = [
   { href: '/admin/transactions', icon: '💳', label: 'Transaksi'    },
   { href: '/admin/invitations',  icon: '💌', label: 'Undangan'     },
   { href: '/admin/tokens',       icon: '🧮', label: 'Token Usage'  },
+  { href: '/admin/ai-brain',     icon: '🧠', label: 'AI Brain'     },
 ]
 
 export default function AdminNav() {
