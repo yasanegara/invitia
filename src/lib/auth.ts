@@ -56,4 +56,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session
     },
   },
+  events: {
+    async createUser({ user }) {
+      // Grant 1 free credit to new OAuth signups (credentials route handles its own)
+      if (user.id) {
+        await db.user.update({ where: { id: user.id }, data: { credits: 1 } })
+      }
+    },
+  },
 })

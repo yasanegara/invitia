@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { signIn }   from 'next-auth/react'
-import Link         from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useState }         from 'react'
+import { signIn }           from 'next-auth/react'
+import Link                 from 'next/link'
+import { useRouter }        from 'next/navigation'
+import GoogleSignInButton   from '@/components/GoogleSignInButton'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -27,6 +28,14 @@ export default function LoginPage() {
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-1">Masuk</h1>
         <p className="text-sm text-center text-gray-500 mb-6">ke akun invitia.id kamu</p>
+
+        <GoogleSignInButton label="Masuk dengan Google" />
+
+        <div className="flex items-center gap-3 my-4">
+          <div className="flex-1 h-px bg-gray-100" />
+          <span className="text-xs text-gray-400">atau dengan email</span>
+          <div className="flex-1 h-px bg-gray-100" />
+        </div>
 
         {error && (
           <p className="text-sm text-red-500 bg-red-50 rounded-lg px-4 py-2 mb-4">{error}</p>
