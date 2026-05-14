@@ -33,7 +33,10 @@ export default async function SettingsPage({
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
-        <span className="font-bold text-lg text-amber-600">invitia.id</span>
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-lg text-amber-600">invitia.id</span>
+          <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+        </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-500">
             🪙 <span className="font-semibold text-gray-800">{user?.credits ?? 0}</span> kredit

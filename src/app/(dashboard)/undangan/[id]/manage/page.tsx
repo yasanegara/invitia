@@ -40,7 +40,10 @@ export default async function ManagePage({
       {/* Header */}
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/dashboard" className="text-amber-600 font-bold text-lg">invitia.id</Link>
+          <div className="flex items-center gap-2">
+            <Link href="/dashboard" className="text-amber-600 font-bold text-lg">invitia.id</Link>
+            <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+          </div>
           <span className="text-gray-300">/</span>
           <span className="text-gray-600 text-sm font-medium truncate max-w-[200px]">{invitation.title}</span>
         </div>

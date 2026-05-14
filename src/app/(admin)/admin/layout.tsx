@@ -12,7 +12,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       {/* Sidebar */}
       <aside className="w-56 shrink-0 bg-gray-900 border-r border-gray-800 flex flex-col">
         <div className="px-5 py-5 border-b border-gray-800">
-          <span className="font-bold text-amber-400 text-lg">invitia.id</span>
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-amber-400 text-lg">invitia.id</span>
+            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+          </div>
           <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">Super Admin</p>
         </div>
 
