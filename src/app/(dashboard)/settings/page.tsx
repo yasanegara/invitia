@@ -34,7 +34,7 @@ export default async function SettingsPage({
       {/* Navbar */}
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-bold text-lg text-amber-600">invitia.id</span>
+          <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
           <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
         </div>
         <div className="flex items-center gap-4">

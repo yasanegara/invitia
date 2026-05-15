@@ -16,7 +16,7 @@ export default async function LandingPage() {
       <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-xl text-amber-400 tracking-tight">invitia.id</span>
+            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
             <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
@@ -367,7 +367,7 @@ export default async function LandingPage() {
       <footer className="bg-black border-t border-gray-900 py-10">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-amber-400">invitia.id</span>
+            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
             <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md">Beta</span>
           </div>
           <p>© {new Date().getFullYear()} invitia.id · Dibuat di Indonesia</p>
