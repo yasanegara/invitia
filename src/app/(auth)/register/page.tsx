@@ -40,7 +40,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 to-amber-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 to-rose-50 px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-1">Daftar Gratis</h1>
         <p className="text-sm text-center text-gray-500 mb-6">1 kredit gratis untuk mulai</p>
@@ -66,7 +66,7 @@ export default function RegisterPage() {
               <input
                 type={field === 'password' ? 'password' : field === 'email' ? 'email' : 'text'}
                 name={field} required value={form[field]} onChange={onChange}
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-rose-300"
                 placeholder={field === 'name' ? 'Nama lengkap' : field === 'email' ? 'nama@email.com' : 'Min. 8 karakter'}
                 minLength={field === 'password' ? 8 : undefined}
               />
@@ -74,7 +74,7 @@ export default function RegisterPage() {
           ))}
           <button
             type="submit" disabled={loading}
-            className="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition disabled:opacity-60"
+            className="w-full bg-rose-400 hover:bg-rose-500 text-white font-semibold py-3 rounded-xl transition disabled:opacity-60"
           >
             {loading ? 'Mendaftarkan...' : 'Daftar Sekarang'}
           </button>
@@ -82,7 +82,7 @@ export default function RegisterPage() {
 
         <p className="text-sm text-center text-gray-500 mt-6">
           Sudah punya akun?{' '}
-          <Link href="/login" className="text-amber-600 font-semibold hover:underline">Masuk</Link>
+          <Link href="/login" className="text-rose-500 font-semibold hover:underline">Masuk</Link>
         </p>
       </div>
     </div>

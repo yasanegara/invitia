@@ -17,31 +17,31 @@ function NikahPreview() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-between py-8 px-6 text-center"
       style={{ background: 'linear-gradient(160deg,#1a0800 0%,#3d1500 50%,#1a0800 100%)' }}>
-      <p className="text-amber-400/60 text-[10px] tracking-[0.35em] uppercase">Undangan Pernikahan</p>
+      <p className="text-rose-300/60 text-[10px] tracking-[0.35em] uppercase">Undangan Pernikahan</p>
       <div className="flex items-center gap-2 w-full">
-        <div className="flex-1 h-px bg-amber-700/40" />
-        <span className="text-amber-500">❋</span>
-        <div className="flex-1 h-px bg-amber-700/40" />
+        <div className="flex-1 h-px bg-rose-600/40" />
+        <span className="text-rose-400">❋</span>
+        <div className="flex-1 h-px bg-rose-600/40" />
       </div>
-      <p className="text-amber-300/80 text-sm">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <p className="text-rose-200/80 text-sm">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
       <div>
-        <p className="text-amber-100 text-3xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Rizky</p>
-        <p className="text-amber-500/70 text-sm my-1">&amp;</p>
-        <p className="text-amber-100 text-3xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Salsabila</p>
+        <p className="text-rose-50 text-3xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Rizky</p>
+        <p className="text-rose-400/70 text-sm my-1">&amp;</p>
+        <p className="text-rose-50 text-3xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Salsabila</p>
       </div>
       <div className="flex items-center gap-2 w-full">
-        <div className="flex-1 h-px bg-amber-700/40" />
-        <span className="text-amber-500/60 text-xs">✦ ✦ ✦</span>
-        <div className="flex-1 h-px bg-amber-700/40" />
+        <div className="flex-1 h-px bg-rose-600/40" />
+        <span className="text-rose-400/60 text-xs">✦ ✦ ✦</span>
+        <div className="flex-1 h-px bg-rose-600/40" />
       </div>
       <div>
-        <p className="text-amber-400 font-semibold">Ahad, 15 Juni 2025</p>
-        <p className="text-amber-200/50 text-xs mt-0.5">Graha Saba Buana · Yogyakarta</p>
+        <p className="text-rose-300 font-semibold">Ahad, 15 Juni 2025</p>
+        <p className="text-rose-100/50 text-xs mt-0.5">Graha Saba Buana · Yogyakarta</p>
       </div>
-      <div className="border border-amber-600/50 text-amber-400 text-[11px] px-5 py-1.5 rounded-full">
+      <div className="border border-rose-500/50 text-rose-300 text-[11px] px-5 py-1.5 rounded-full">
         Konfirmasi Kehadiran
       </div>
-      <p className="text-amber-400/25 text-[10px] tracking-widest">✦ invitia.id ✦</p>
+      <p className="text-rose-300/25 text-[10px] tracking-widest">✦ invitia.id ✦</p>
     </div>
   )
 }
@@ -55,11 +55,11 @@ function WisudaPreview() {
       <div>
         <p className="text-blue-300/60 text-[11px] uppercase tracking-widest mb-2">Dengan bangga mempersembahkan</p>
         <p className="text-white text-2xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Fadhilah Nur Azizah</p>
-        <div className="h-px bg-amber-400/40 w-20 mx-auto my-2" />
+        <div className="h-px bg-rose-300/40 w-20 mx-auto my-2" />
         <p className="text-blue-300 text-xs">S.Kom · Universitas Gadjah Mada</p>
       </div>
       <div className="bg-blue-900/40 border border-blue-700/30 rounded-xl px-4 py-3 w-full">
-        <p className="text-amber-400 font-semibold text-sm">Sabtu, 22 Maret 2025</p>
+        <p className="text-rose-300 font-semibold text-sm">Sabtu, 22 Maret 2025</p>
         <p className="text-blue-300/50 text-xs mt-0.5">Auditorium Grha Sabha Pramana</p>
       </div>
       <div className="border border-blue-500/40 text-blue-300 text-[11px] px-5 py-1.5 rounded-full">
@@ -101,7 +101,7 @@ function AqiqahPreview() {
     <div className="w-full h-full flex flex-col items-center justify-between py-8 px-6 text-center"
       style={{ background: 'linear-gradient(160deg,#0b1f1a 0%,#0f3d2e 50%,#0b1f1a 100%)' }}>
       <p className="text-emerald-400/60 text-[10px] tracking-[0.35em] uppercase">Tasyakuran Aqiqah</p>
-      <p className="text-amber-400/80 text-sm">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <p className="text-rose-300/80 text-sm">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
       <div>
         <p className="text-emerald-200/60 text-[11px] mb-2">Alhamdulillah telah lahir putra kami</p>
         <p className="text-white text-2xl font-bold" style={{ fontFamily: 'Georgia,serif' }}>Muhammad Rayyan</p>
@@ -114,7 +114,7 @@ function AqiqahPreview() {
         <p className="text-emerald-200 text-sm font-medium mt-0.5">Bpk. Ahmad & Ibu Siti</p>
       </div>
       <div className="bg-emerald-900/40 border border-emerald-700/30 rounded-xl px-4 py-3 w-full">
-        <p className="text-amber-400 font-semibold text-sm">Sabtu, 29 Maret 2025</p>
+        <p className="text-rose-300 font-semibold text-sm">Sabtu, 29 Maret 2025</p>
         <p className="text-emerald-300/50 text-xs mt-0.5">Kediaman Keluarga · Bandung</p>
       </div>
       <div className="border border-emerald-500/40 text-emerald-300 text-[11px] px-5 py-1.5 rounded-full">
@@ -130,7 +130,7 @@ function KhitanPreview() {
     <div className="w-full h-full flex flex-col items-center justify-between py-8 px-6 text-center"
       style={{ background: 'linear-gradient(160deg,#0d1f2a 0%,#133547 50%,#0d1f2a 100%)' }}>
       <p className="text-cyan-400/60 text-[10px] tracking-[0.35em] uppercase">Walimatul Khitan</p>
-      <p className="text-amber-400/80 text-sm">الحمد لله رب العالمين</p>
+      <p className="text-rose-300/80 text-sm">الحمد لله رب العالمين</p>
       <div>
         <div className="text-4xl mb-3">⭐</div>
         <p className="text-white/60 text-[11px] uppercase tracking-widest mb-2">Dengan penuh syukur mengundang</p>
@@ -139,7 +139,7 @@ function KhitanPreview() {
         <p className="text-cyan-300/60 text-xs">Putra dari Bpk. Hendra & Ibu Dewi</p>
       </div>
       <div className="bg-cyan-900/30 border border-cyan-700/30 rounded-xl px-4 py-3 w-full">
-        <p className="text-amber-400 font-semibold text-sm">Ahad, 13 April 2025</p>
+        <p className="text-rose-300 font-semibold text-sm">Ahad, 13 April 2025</p>
         <p className="text-cyan-300/50 text-xs mt-0.5">Aula Masjid Al-Ikhlas · Cirebon</p>
       </div>
       <div className="border border-cyan-500/40 text-cyan-300 text-[11px] px-5 py-1.5 rounded-full">
@@ -172,7 +172,7 @@ function GatheringPreview() {
         <p className="text-indigo-200/50 text-[11px]">&ldquo;Bersatu Menuju Masa Depan Gemilang&rdquo;</p>
       </div>
       <div className="bg-indigo-900/40 border border-indigo-700/30 rounded-xl px-4 py-3 w-full">
-        <p className="text-amber-400 font-semibold text-sm">Jumat, 18 Juli 2025</p>
+        <p className="text-rose-300 font-semibold text-sm">Jumat, 18 Juli 2025</p>
         <p className="text-indigo-300/50 text-xs mt-0.5">The Ritz-Carlton Jakarta · 18.00 WIB</p>
       </div>
       <div className="border border-indigo-400/40 text-indigo-300 text-[11px] px-5 py-1.5 rounded-full">
@@ -193,7 +193,7 @@ const PREVIEWS: Record<InvType, React.ReactNode> = {
 }
 
 const GLOW: Record<InvType, string> = {
-  nikah:       '#f59e0b',
+  nikah:       '#c9848e',
   wisuda:      '#3b82f6',
   ulang_tahun: '#a855f7',
   aqiqah:      '#10b981',
@@ -205,9 +205,9 @@ export default function LandingShowcase() {
   const [active, setActive] = useState<InvType>('nikah')
 
   return (
-    <section className="py-20" style={{ background: '#0a0a0a' }}>
+    <section className="py-20 bg-gray-200">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-white mb-2">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
           Semua Jenis Undangan
         </h2>
         <p className="text-center text-gray-500 text-sm mb-10">
@@ -220,8 +220,8 @@ export default function LandingShowcase() {
             <button key={t.id} onClick={() => setActive(t.id)}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                 active === t.id
-                  ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/30 scale-105'
-                  : 'bg-gray-900 text-gray-400 hover:bg-gray-800 hover:text-gray-200 border border-gray-800'
+                  ? 'btn-primary shadow-lg scale-105'
+                  : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 border border-gray-200'
               }`}>
               <span>{t.emoji}</span>
               <span>{t.label}</span>
@@ -237,15 +237,15 @@ export default function LandingShowcase() {
               style={{ background: `radial-gradient(circle at center, ${GLOW[active]} 0%, transparent 70%)` }}
             />
             {/* Phone frame */}
-            <div className="w-64 h-[500px] rounded-[40px] border-4 border-gray-800 shadow-2xl overflow-hidden ring-1 ring-white/5 bg-gray-950 relative">
+            <div className="w-64 h-[500px] rounded-[40px] border-4 border-gray-300 shadow-2xl overflow-hidden ring-1 ring-black/5 bg-white relative">
               {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-5 bg-gray-800 rounded-b-xl z-10" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-5 bg-gray-300 rounded-b-xl z-10" />
               <div className="w-full h-full transition-all duration-300">
                 {PREVIEWS[active]}
               </div>
             </div>
           </div>
-          <p className="text-gray-700 text-xs mt-6">
+          <p className="text-gray-400 text-xs mt-6">
             Preview ilustrasi — hasil undangan mengikuti pilihan desain dan konten kamu
           </p>
         </div>

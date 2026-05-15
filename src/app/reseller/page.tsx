@@ -15,17 +15,17 @@ export default async function ResellerPage() {
       <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+            <img src="/logo.png" alt="invitia.id" className="h-24 w-auto" />
+            <span className="text-[10px] font-bold text-rose-300 bg-rose-300/10 border border-rose-300/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
           </div>
           <Link href="/" className="text-sm text-gray-400 hover:text-white transition">← Kembali</Link>
           <div className="flex items-center gap-3">
             {session ? (
-              <Link href="/settings" className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
+              <Link href="/settings" className="bg-rose-400 hover:bg-rose-300 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
                 Beli Kredit →
               </Link>
             ) : (
-              <Link href="/register" className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
+              <Link href="/register" className="bg-rose-400 hover:bg-rose-300 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
                 Mulai Gratis
               </Link>
             )}
@@ -36,16 +36,16 @@ export default async function ResellerPage() {
       {/* ── HERO: Dream Outcome untuk reseller ── */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#0a0600 0%,#1a0900 40%,#0d0d0d 100%)' }}>
         <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle,#f59e0b 0%,transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle,#c9848e 0%,transparent 70%)' }} />
 
         <div className="relative max-w-4xl mx-auto px-6 pt-24 pb-20 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold px-4 py-2 rounded-full mb-8 tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-rose-400/10 border border-rose-400/30 text-rose-300 text-xs font-bold px-4 py-2 rounded-full mb-8 tracking-wide">
             Untuk WO, Event Planner & Reseller
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
             Tinggal bikin.<br />
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#f59e0b,#fb923c)' }}>
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#c9848e,#c9848e)' }}>
               Jualan. Cuan.
             </span>
           </h1>
@@ -57,7 +57,7 @@ export default async function ResellerPage() {
           </p>
 
           <Link href={cta}
-            className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-black px-10 py-4 rounded-2xl text-base transition-all shadow-xl shadow-amber-500/30 hover:scale-105">
+            className="inline-flex items-center gap-2 bg-rose-400 hover:bg-rose-300 text-black font-black px-10 py-4 rounded-2xl text-base transition-all shadow-xl shadow-rose-400/30 hover:scale-105">
             Mulai Sekarang — Gratis →
           </Link>
           <p className="text-xs text-gray-600 mt-4">
@@ -69,7 +69,7 @@ export default async function ResellerPage() {
       {/* ── VALUE EQUATION: Effort ↓ ── */}
       <section className="py-20 bg-gray-950">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">Yang tidak perlu kamu urus</p>
+          <p className="text-center text-rose-400 text-xs font-bold uppercase tracking-widest mb-3">Yang tidak perlu kamu urus</p>
           <h2 className="text-3xl font-black text-center text-white mb-4">
             Semua sudah beres.
           </h2>
@@ -102,7 +102,7 @@ export default async function ResellerPage() {
       {/* ── VALUE STACK: Yang klien dapat ── */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-600 text-xs font-bold uppercase tracking-widest mb-3">Yang kamu jualkan ke klien</p>
+          <p className="text-center text-rose-500 text-xs font-bold uppercase tracking-widest mb-3">Yang kamu jualkan ke klien</p>
           <h2 className="text-3xl font-black text-center text-gray-900 mb-4">
             Produk yang klienmu tidak bisa bikin sendiri.
           </h2>
@@ -122,7 +122,7 @@ export default async function ResellerPage() {
               { icon: '📱', title: 'QR Check-in di Venue',   desc: 'Tamu scan QR saat datang — langsung tercatat. Keliatan profesional.' },
               { icon: '🔗', title: 'Link Aktif Selamanya',   desc: 'Link tidak mati setelah acara selesai.' },
             ].map(f => (
-              <div key={f.title} className="flex gap-4 border border-gray-100 rounded-2xl p-5 hover:border-amber-200 transition">
+              <div key={f.title} className="flex gap-4 border border-gray-100 rounded-2xl p-5 hover:border-rose-100 transition">
                 <span className="text-2xl shrink-0 mt-0.5">{f.icon}</span>
                 <div>
                   <p className="font-bold text-gray-900 text-sm mb-1">{f.title}</p>
@@ -137,7 +137,7 @@ export default async function ResellerPage() {
       {/* ── PRICING / MODAL ── */}
       <section className="py-20 bg-gray-950">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-center text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">Modal kamu</p>
+          <p className="text-center text-rose-400 text-xs font-bold uppercase tracking-widest mb-3">Modal kamu</p>
           <h2 className="text-3xl font-black text-center text-white mb-4">
             Harga yang kamu bayar ke kami.
           </h2>
@@ -150,11 +150,11 @@ export default async function ResellerPage() {
               <div key={key}
                 className={`rounded-3xl p-6 border flex flex-col ${
                   key === 'PRO'
-                    ? 'border-amber-500 bg-amber-500/10 ring-1 ring-amber-500'
+                    ? 'border-rose-400 bg-rose-400/10 ring-1 ring-rose-400'
                     : 'border-gray-800 bg-gray-900'
                 }`}>
                 {key === 'PRO' && (
-                  <span className="text-xs font-black text-amber-400 mb-3 uppercase tracking-wide">Paling hemat per undangan</span>
+                  <span className="text-xs font-black text-rose-300 mb-3 uppercase tracking-wide">Paling hemat per undangan</span>
                 )}
                 <h3 className="font-black text-white mb-1">{pack.label}</h3>
                 <p className="text-3xl font-black text-white mb-1">{formatRupiah(pack.price)}</p>
@@ -162,17 +162,17 @@ export default async function ResellerPage() {
                   {pack.credits === -1 ? 'Unlimited undangan' : `${pack.credits} undangan`}
                 </p>
                 {key !== 'AGENCY' && pack.credits > 0 && (
-                  <p className="text-sm font-bold text-amber-400 mb-5">
+                  <p className="text-sm font-bold text-rose-300 mb-5">
                     = {formatRupiah(Math.round(pack.price / pack.credits))}/undangan
                   </p>
                 )}
                 {key === 'AGENCY' && (
-                  <p className="text-sm font-bold text-amber-400 mb-5">Unlimited — cocok untuk volume tinggi</p>
+                  <p className="text-sm font-bold text-rose-300 mb-5">Unlimited — cocok untuk volume tinggi</p>
                 )}
                 <Link href={session ? '/settings' : '/register'}
                   className={`text-center font-bold py-3 rounded-2xl text-sm transition mt-auto ${
                     key === 'PRO'
-                      ? 'bg-amber-500 hover:bg-amber-400 text-black'
+                      ? 'bg-rose-400 hover:bg-rose-300 text-black'
                       : 'bg-gray-800 hover:bg-gray-700 text-white'
                   }`}>
                   Pilih Paket
@@ -193,11 +193,11 @@ export default async function ResellerPage() {
       {/* ── HOW IT WORKS ── */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-600 text-xs font-bold uppercase tracking-widest mb-3">Cara kerjanya</p>
+          <p className="text-center text-rose-500 text-xs font-bold uppercase tracking-widest mb-3">Cara kerjanya</p>
           <h2 className="text-3xl font-black text-center text-gray-900 mb-14">Empat langkah dari daftar sampai cuan</h2>
 
           <div className="grid md:grid-cols-4 gap-6 relative">
-            <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 z-0" />
+            <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-rose-100 via-rose-300 to-rose-100 z-0" />
             {[
               { step: '1', label: 'Daftar',          desc: 'Buat akun gratis. Dapat 1 kredit untuk coba sendiri dulu.' },
               { step: '2', label: 'Beli Kredit',      desc: 'Pilih paket sesuai volume klienmu. Bayar sekali, pakai kapan saja.' },
@@ -238,18 +238,18 @@ export default async function ResellerPage() {
         style={{ background: 'linear-gradient(135deg,#0a0600 0%,#1a0900 50%,#0a0a0a 100%)' }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 rounded-full"
-            style={{ background: 'radial-gradient(circle,#f59e0b,transparent 60%)' }} />
+            style={{ background: 'radial-gradient(circle,#c9848e,transparent 60%)' }} />
         </div>
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
             Klien pertamamu<br />
-            <span className="text-amber-400">sudah menunggu.</span>
+            <span className="text-rose-300">sudah menunggu.</span>
           </h2>
           <p className="text-gray-500 text-base mb-10 leading-relaxed">
             Daftar gratis, coba sendiri dengan 1 kredit, lalu mulai tawarkan ke klienmu.
           </p>
           <Link href={cta}
-            className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-black px-12 py-5 rounded-2xl text-lg transition-all shadow-2xl shadow-amber-500/30 hover:scale-105">
+            className="inline-flex items-center gap-3 bg-rose-400 hover:bg-rose-300 text-black font-black px-12 py-5 rounded-2xl text-lg transition-all shadow-2xl shadow-rose-400/30 hover:scale-105">
             Mulai Sekarang — Gratis →
           </Link>
           <p className="text-gray-700 text-xs mt-6">
@@ -262,8 +262,8 @@ export default async function ResellerPage() {
       <footer className="bg-black border-t border-gray-900 py-10">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md">Beta</span>
+            <img src="/logo.png" alt="invitia.id" className="h-24 w-auto" />
+            <span className="text-[10px] font-bold text-rose-300 bg-rose-300/10 border border-rose-300/30 px-1.5 py-0.5 rounded-md">Beta</span>
           </div>
           <p>© {new Date().getFullYear()} invitia.id · Dibuat di Indonesia</p>
           <div className="flex items-center gap-4">

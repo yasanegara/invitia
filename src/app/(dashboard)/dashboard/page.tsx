@@ -30,8 +30,8 @@ export default async function DashboardPage() {
       {/* Navbar */}
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-          <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+          <img src="/logo.png" alt="invitia.id" className="h-24 w-auto" />
+          <span className="text-[10px] font-bold text-rose-500 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
         </div>
         <div className="flex items-center gap-4">
           <Link href="/settings" className="text-sm text-gray-500 hover:text-gray-700">
@@ -39,7 +39,7 @@ export default async function DashboardPage() {
           </Link>
           <Link href="/settings" className="text-sm text-gray-500 hover:text-gray-700 font-medium">Pengaturan</Link>
           <LogoutButton />
-          <Link href="/undangan/new" className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
+          <Link href="/undangan/new" className="bg-rose-400 hover:bg-rose-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
             + Buat Undangan
           </Link>
         </div>
@@ -70,7 +70,7 @@ export default async function DashboardPage() {
         <div className="bg-white rounded-2xl shadow-sm border overflow-hidden">
           <div className="px-6 py-4 border-b flex items-center justify-between">
             <h2 className="font-semibold text-gray-800">Undangan Saya</h2>
-            <Link href="/undangan/new" className="text-sm text-amber-600 font-semibold">+ Buat Baru</Link>
+            <Link href="/undangan/new" className="text-sm text-rose-500 font-semibold">+ Buat Baru</Link>
           </div>
 
           {invitations.length === 0 ? (
@@ -78,7 +78,7 @@ export default async function DashboardPage() {
               <p className="text-4xl mb-3">💌</p>
               <p className="font-medium">Belum ada undangan</p>
               <p className="text-sm mt-1">Mulai buat undangan pertama kamu!</p>
-              <Link href="/undangan/new" className="mt-4 inline-block bg-amber-500 text-white text-sm font-semibold px-6 py-2 rounded-xl">
+              <Link href="/undangan/new" className="mt-4 inline-block bg-rose-400 text-white text-sm font-semibold px-6 py-2 rounded-xl">
                 Buat Sekarang
               </Link>
             </div>
@@ -106,7 +106,7 @@ export default async function DashboardPage() {
                     </Link>
                     {inv.status === 'PUBLISHED' && (
                       <Link href={`/u/${inv.slug}`} target="_blank"
-                        className="text-xs text-amber-600 font-semibold hover:underline">
+                        className="text-xs text-rose-500 font-semibold hover:underline">
                         Lihat →
                       </Link>
                     )}

@@ -34,8 +34,8 @@ export default async function SettingsPage({
       {/* Navbar */}
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-          <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+          <img src="/logo.png" alt="invitia.id" className="h-24 w-auto" />
+          <span className="text-[10px] font-bold text-rose-500 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
         </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-500">
@@ -62,7 +62,7 @@ export default async function SettingsPage({
         {/* Credit balance */}
         <div className="bg-white rounded-2xl border shadow-sm p-6">
           <p className="text-sm text-gray-500 mb-1">Saldo Kredit</p>
-          <p className="text-4xl font-bold text-amber-500">{user?.credits ?? 0}</p>
+          <p className="text-4xl font-bold text-rose-400">{user?.credits ?? 0}</p>
           <p className="text-xs text-gray-400 mt-1">1 kredit = 1 undangan digital</p>
         </div>
 
@@ -72,14 +72,14 @@ export default async function SettingsPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {(Object.entries(CREDIT_PACKS) as [keyof typeof CREDIT_PACKS, typeof CREDIT_PACKS[keyof typeof CREDIT_PACKS]][]).map(([key, pack]) => (
               <div key={key}
-                className={`bg-white rounded-2xl border p-5 flex flex-col shadow-sm ${key === 'PRO' ? 'border-amber-400 ring-2 ring-amber-400' : 'border-gray-100'}`}>
+                className={`bg-white rounded-2xl border p-5 flex flex-col shadow-sm ${key === 'PRO' ? 'border-rose-300 ring-2 ring-rose-300' : 'border-gray-100'}`}>
                 {key === 'PRO' && (
-                  <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full self-start mb-2">
+                  <span className="text-[10px] font-bold text-rose-500 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full self-start mb-2">
                     Populer
                   </span>
                 )}
                 <p className="font-bold text-gray-900">{pack.label}</p>
-                <p className="text-2xl font-bold text-amber-500 mt-1">{formatRupiah(pack.price)}</p>
+                <p className="text-2xl font-bold text-rose-400 mt-1">{formatRupiah(pack.price)}</p>
                 <p className="text-xs text-gray-500 mb-4">
                   {pack.credits === -1 ? 'Unlimited kredit' : `${pack.credits} kredit`}
                 </p>

@@ -36,13 +36,13 @@ function UploadZone({ label, value, onChange, accept, isAudio, maxMB = 5 }: Uplo
       <p className="text-xs font-semibold text-gray-600 mb-1">{label}</p>
       <div
         className={`relative border-2 border-dashed rounded-xl transition cursor-pointer
-          ${value ? 'border-green-300 bg-green-50' : 'border-gray-200 hover:border-amber-300'}`}
+          ${value ? 'border-green-300 bg-green-50' : 'border-gray-200 hover:border-rose-200'}`}
         onClick={() => inputRef.current?.click()}
-        onDragOver={e => { e.preventDefault(); e.currentTarget.classList.add('border-amber-400') }}
-        onDragLeave={e => e.currentTarget.classList.remove('border-amber-400')}
+        onDragOver={e => { e.preventDefault(); e.currentTarget.classList.add('border-rose-300') }}
+        onDragLeave={e => e.currentTarget.classList.remove('border-rose-300')}
         onDrop={async e => {
           e.preventDefault()
-          e.currentTarget.classList.remove('border-amber-400')
+          e.currentTarget.classList.remove('border-rose-300')
           const f = e.dataTransfer.files?.[0]
           if (f) handleFile(f)
         }}
@@ -191,7 +191,7 @@ function Toggle({ on, onChange }: { on: boolean; onChange: (v: boolean) => void 
     <button
       type="button"
       onClick={() => onChange(!on)}
-      className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${on ? 'bg-amber-500' : 'bg-gray-200'}`}
+      className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ${on ? 'bg-rose-400' : 'bg-gray-200'}`}
     >
       <span className={`inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform duration-200 ${on ? 'translate-x-4' : 'translate-x-0'}`} />
     </button>
@@ -206,7 +206,7 @@ function FeatureCard({
   children: React.ReactNode
 }) {
   return (
-    <div className={`rounded-xl border-2 overflow-hidden transition-colors duration-200 ${on ? 'border-amber-300 bg-amber-50/40' : 'border-gray-200 bg-white'}`}>
+    <div className={`rounded-xl border-2 overflow-hidden transition-colors duration-200 ${on ? 'border-rose-200 bg-rose-50/40' : 'border-gray-200 bg-white'}`}>
       <div
         role="button"
         tabIndex={0}
@@ -410,11 +410,11 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-rose-50">
       {/* Header */}
       <header className="bg-white border-b px-6 py-4 flex items-center gap-4">
         <button onClick={() => router.back()} className="text-gray-400 hover:text-gray-700">←</button>
-        <span className="font-bold text-amber-600">
+        <span className="font-bold text-rose-500">
           {isEdit ? 'Edit Undangan' : 'Buat Undangan Baru'}
         </span>
       </header>
@@ -424,13 +424,13 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
         {STEPS.map((s, i) => (
           <div key={i} className="flex items-center gap-2">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition ${
-              i + 1 === step  ? 'bg-amber-500 text-white' :
+              i + 1 === step  ? 'bg-rose-400 text-white' :
               i + 1 < step    ? 'bg-green-500 text-white' :
                                 'bg-gray-200 text-gray-500'
             }`}>
               {i + 1 < step ? '✓' : i + 1}
             </div>
-            <span className={`text-xs hidden sm:block ${i + 1 === step ? 'text-amber-600 font-semibold' : 'text-gray-400'}`}>
+            <span className={`text-xs hidden sm:block ${i + 1 === step ? 'text-rose-500 font-semibold' : 'text-gray-400'}`}>
               {s.label}
             </span>
             {i < STEPS.length - 1 && <div className="w-8 h-px bg-gray-300" />}
@@ -456,8 +456,8 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                   }}
                   className={`p-3 rounded-2xl border-2 text-center transition ${
                     form.jenis === j.id
-                      ? 'border-amber-400 bg-amber-50 shadow-sm'
-                      : 'border-gray-200 hover:border-amber-200'
+                      ? 'border-rose-300 bg-rose-50 shadow-sm'
+                      : 'border-gray-200 hover:border-rose-100'
                   }`}>
                   <p className="text-2xl">{j.emoji}</p>
                   <p className="text-xs font-bold text-gray-700 mt-1">{j.label}</p>
@@ -466,7 +466,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
               ))}
             </div>
             {form.jenis && (
-              <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-700">
+              <div className="bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-rose-600">
                 ✅ <strong>{selectedJenis?.emoji} {selectedJenis?.label}</strong> dipilih — lanjut untuk mengisi detail acara.
               </div>
             )}
@@ -502,7 +502,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                 {(['Light', 'Dark', 'Auto'] as const).map(m => (
                   <button key={m} onClick={() => setField('mode', m)}
                     className={`flex-1 py-2 rounded-xl text-sm font-medium border transition ${
-                      form.mode === m ? 'border-amber-400 bg-amber-50 text-amber-700' : 'border-gray-200 text-gray-500'
+                      form.mode === m ? 'border-rose-300 bg-rose-50 text-rose-600' : 'border-gray-200 text-gray-500'
                     }`}>
                     {m === 'Light' ? '☀️' : m === 'Dark' ? '🌙' : '🔄'} {m}
                   </button>
@@ -522,7 +522,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                 {GAYA_OPTIONS.map(opt => (
                   <button key={opt.value} onClick={() => setField('gaya', opt.value)}
                     className={`p-3 rounded-xl border text-left transition ${
-                      form.gaya === opt.value ? 'border-amber-400 bg-amber-50' : 'border-gray-200 hover:border-gray-300'
+                      form.gaya === opt.value ? 'border-rose-300 bg-rose-50' : 'border-gray-200 hover:border-gray-300'
                     }`}>
                     <p className="font-semibold text-sm">{opt.label}</p>
                     <p className="text-xs text-gray-400 mt-0.5">{opt.desc}</p>
@@ -536,7 +536,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                 {WARNA_OPTIONS.map(opt => (
                   <button key={opt.value} onClick={() => setField('warna', opt.value)}
                     className={`w-full p-3 rounded-xl border text-left text-sm transition ${
-                      form.warna === opt.value ? 'border-amber-400 bg-amber-50 font-semibold' : 'border-gray-200'
+                      form.warna === opt.value ? 'border-rose-300 bg-rose-50 font-semibold' : 'border-gray-200'
                     }`}>
                     {opt.label}
                   </button>
@@ -549,7 +549,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                 {FONT_OPTIONS.map(opt => (
                   <button key={opt.value} onClick={() => setField('tipografi', opt.value)}
                     className={`w-full p-3 rounded-xl border text-left text-sm transition ${
-                      form.tipografi === opt.value ? 'border-amber-400 bg-amber-50 font-semibold' : 'border-gray-200'
+                      form.tipografi === opt.value ? 'border-rose-300 bg-rose-50 font-semibold' : 'border-gray-200'
                     }`}>
                     {opt.label}
                   </button>
@@ -610,7 +610,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                           }
                           input.click()
                         }}
-                        className="text-xs text-amber-600 font-semibold hover:underline">
+                        className="text-xs text-rose-500 font-semibold hover:underline">
                         + Tambah Foto
                       </button>
                     )}
@@ -681,7 +681,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                   {dompetEntries.length < 5 && (
                     <button type="button"
                       onClick={() => setDompetEntries(p => [...p, { nama: '', nomor: '', penerima: '' }])}
-                      className="w-full border-2 border-dashed border-gray-200 hover:border-amber-300 text-gray-400 hover:text-amber-600 text-xs font-semibold py-2.5 rounded-xl transition">
+                      className="w-full border-2 border-dashed border-gray-200 hover:border-rose-200 text-gray-400 hover:text-rose-500 text-xs font-semibold py-2.5 rounded-xl transition">
                       + Tambah Rekening / E-Wallet
                     </button>
                   )}
@@ -716,7 +716,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                   <button key={item} type="button" onClick={() => toggleDekorasi(item)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition ${
                       form.dekorasiList?.includes(item)
-                        ? 'border-amber-400 bg-amber-100 text-amber-700'
+                        ? 'border-rose-300 bg-rose-50 text-rose-600'
                         : 'border-gray-200 text-gray-500 hover:border-gray-300'
                     }`}>
                     {item}
@@ -770,13 +770,13 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                       </span>
                     </div>
                   ) : (
-                    <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-700 flex items-center gap-2">
+                    <div className="bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-rose-600 flex items-center gap-2">
                       <span className="text-lg">💳</span>
                       <span>Edit gratis habis — akan memotong <strong>1 kredit</strong>.</span>
                     </div>
                   )
                 ) : (
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-700 flex items-center gap-2">
+                  <div className="bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-sm text-rose-600 flex items-center gap-2">
                     <span className="text-lg">💳</span>
                     <span>Membuat undangan baru memotong <strong>1 kredit</strong>.</span>
                   </div>
@@ -808,7 +808,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                   )}
                 </div>
                 <button onClick={generate}
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-2xl text-lg transition">
+                  className="w-full bg-rose-400 hover:bg-rose-500 text-white font-bold py-4 rounded-2xl text-lg transition">
                   {isEdit
                     ? isFree ? '✏️ Update Undangan (Gratis)' : '✏️ Update Undangan (1 Kredit)'
                     : '✨ Generate Sekarang (1 Kredit)'}
@@ -819,7 +819,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
             {status === 'generating' && (
               <div className="space-y-6">
                 {/* Spinner */}
-                <div className="w-16 h-16 border-4 border-amber-400 border-t-transparent rounded-full animate-spin mx-auto" />
+                <div className="w-16 h-16 border-4 border-rose-300 border-t-transparent rounded-full animate-spin mx-auto" />
 
                 {/* Phase label */}
                 <p className="font-semibold text-gray-700 text-center">
@@ -830,11 +830,11 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-xs text-gray-400">
                     <span>{isEdit ? 'Mengupdate undangan...' : 'Membuat undangan...'}</span>
-                    <span className="font-semibold text-amber-600">{progressPercent}%</span>
+                    <span className="font-semibold text-rose-500">{progressPercent}%</span>
                   </div>
                   <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-full transition-all duration-700 ease-out"
+                      className="h-full bg-gradient-to-r from-rose-300 to-rose-400 rounded-full transition-all duration-700 ease-out"
                       style={{ width: `${progressPercent}%` }}
                     />
                   </div>
@@ -885,7 +885,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
             )}
             {step < 5 && (
               <button onClick={() => setStep(s => (s + 1) as WizardStep)} disabled={!canNext()}
-                className="flex-1 bg-amber-500 hover:bg-amber-600 disabled:opacity-40 text-white font-bold py-3 rounded-2xl transition">
+                className="flex-1 bg-rose-400 hover:bg-rose-500 disabled:opacity-40 text-white font-bold py-3 rounded-2xl transition">
                 Lanjut →
               </button>
             )}
@@ -896,7 +896,7 @@ export default function WizardForm({ initialParams, invitationId, editCount = 0 
       <style jsx>{`
         .label { display:block; font-size:.75rem; font-weight:600; color:#6b7280; margin-bottom:4px; text-transform:uppercase; letter-spacing:.05em; }
         .inp   { width:100%; border:1.5px solid #e5e7eb; border-radius:12px; padding:12px 16px; font-size:.9rem; color:#374151; outline:none; transition:border-color .2s; }
-        .inp:focus { border-color:#f59e0b; box-shadow:0 0 0 3px rgba(245,158,11,.1); }
+        .inp:focus { border-color:#c9848e; box-shadow:0 0 0 3px rgba(245,158,11,.1); }
         textarea.inp { resize:none; }
       `}</style>
     </div>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>path { fill: var(--color-primary, #f59e0b); }</style>
+  <path d="M50 50 C50 50 35 20 20 20 C8 20 0 30 0 40 C0 55 12 65 25 65 C38 65 50 50 50 50 Z M50 50 C50 50 62 35 75 35 C88 35 100 45 100 55 C100 68 90 80 77 80 C62 80 50 50 50 50 Z" opacity="0"/>
+  <text x="50" y="75" font-size="80" text-anchor="middle" font-family="Georgia,serif" fill="var(--color-primary, #f59e0b)">∞</text>
+</svg>

@@ -41,8 +41,8 @@ export default async function ManagePage({
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <Link href="/dashboard"><img src="/logo.png" alt="invitia.id" className="h-32 w-auto" /></Link>
-            <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+            <Link href="/dashboard"><img src="/logo.png" alt="invitia.id" className="h-24 w-auto" /></Link>
+            <span className="text-[10px] font-bold text-rose-500 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
           </div>
           <span className="text-gray-300">/</span>
           <span className="text-gray-600 text-sm font-medium truncate max-w-[200px]">{invitation.title}</span>
@@ -72,7 +72,7 @@ export default async function ManagePage({
             { label: 'Total RSVP',   value: invitation.rsvps.length },
             { label: 'Konfirmasi Hadir', value: invitation.rsvps.filter(r => r.attending).length, color: 'text-green-600' },
             { label: 'Total Tamu',   value: totalHadir,    color: 'text-blue-600' },
-            { label: 'Check-in',     value: totalCheckin,  color: 'text-amber-600' },
+            { label: 'Check-in',     value: totalCheckin,  color: 'text-rose-500' },
           ].map(s => (
             <div key={s.label} className="bg-white rounded-2xl p-4 shadow-sm border text-center">
               <p className={`text-xl font-bold ${s.color ?? 'text-gray-800'}`}>{s.value}</p>

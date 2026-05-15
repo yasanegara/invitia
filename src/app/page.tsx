@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { auth } from '@/lib/auth'
 import { CREDIT_PACKS, formatRupiah } from '@/lib/utils'
 import LandingShowcase from '@/components/LandingShowcase'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default async function LandingPage() {
   const session = await auth()
@@ -13,28 +14,32 @@ export default async function LandingPage() {
     <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
 
       {/* ── Nav ── */}
-      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/5">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+            <img src="/logo-black.png" alt="invitia.id" className="logo-themed h-24 w-auto" />
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md tracking-wide"
+              style={{ color: 'var(--color-primary-dark)', background: 'var(--color-primary-50)', border: '1px solid var(--color-primary-border)' }}>Beta</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
-            <a href="#yang-kamu-dapat" className="hover:text-white transition">Fitur</a>
-            <a href="#cara-kerja" className="hover:text-white transition">Cara Kerja</a>
-            <a href="#pricing" className="hover:text-white transition">Harga</a>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-gray-500">
+            <a href="#yang-kamu-dapat" className="hover:text-gray-900 transition">Fitur</a>
+            <a href="#cara-kerja" className="hover:text-gray-900 transition">Cara Kerja</a>
+            <a href="#pricing" className="hover:text-gray-900 transition">Harga</a>
           </nav>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             {session ? (
               <Link href="/dashboard"
-                className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
+                className="text-black text-sm font-bold px-5 py-2 rounded-xl transition"
+                style={{ background: 'var(--color-primary)' }}>
                 Dashboard →
               </Link>
             ) : (
               <>
-                <Link href="/login" className="text-sm text-gray-400 hover:text-white transition font-medium">Masuk</Link>
+                <Link href="/login" className="text-sm text-gray-500 hover:text-gray-900 transition font-medium">Masuk</Link>
                 <Link href="/register"
-                  className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2 rounded-xl transition">
+                  className="text-black text-sm font-bold px-5 py-2 rounded-xl transition"
+                  style={{ background: 'var(--color-primary)' }}>
                   Coba Gratis
                 </Link>
               </>
@@ -44,37 +49,34 @@ export default async function LandingPage() {
       </header>
 
       {/* ── HERO: Dream Outcome ── */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#0a0600 0%,#1a0900 40%,#0d0d0d 100%)' }}>
-        <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle,#f59e0b 0%,transparent 70%)' }} />
+      <section className="relative overflow-hidden bg-gray-50">
+        <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none"
+          style={{ background: 'radial-gradient(circle,var(--color-primary) 0%,transparent 70%)' }} />
 
         <div className="relative max-w-4xl mx-auto px-6 pt-24 pb-20 text-center">
 
-          {/* Dream outcome — vivid & specific */}
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tight mb-6">
             Tamu kamu buka HP,<br />
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#f59e0b,#fb923c)' }}>
+            <span className="text-primary">
               langsung terpukau.
             </span>
           </h1>
 
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
             Undangan beranimasi lengkap — musik, countdown hari H, galeri foto, RSVP, amplop digital —
-            semua dari <strong className="text-white">satu link</strong> yang kamu kirim lewat WA.
+            semua dari <strong className="text-gray-900">satu link</strong> yang kamu kirim lewat WA.
             Tidak perlu mikir hosting. Tidak perlu beli domain. Tidak perlu update desain.{' '}
-            <span className="text-amber-400 font-semibold">Tinggal bikin dan kirim.</span>
+            <span className="text-primary font-semibold">Tinggal bikin dan kirim.</span>
           </p>
 
-          {/* Primary CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link href={cta}
-              className="bg-amber-500 hover:bg-amber-400 text-black font-black px-10 py-4 rounded-2xl text-base transition-all shadow-xl shadow-amber-500/30 hover:scale-105">
+              className="btn-primary text-black font-black px-10 py-4 rounded-2xl text-base transition-all shadow-xl shadow-primary hover:scale-105">
               Buat Undangan Gratis — 1 Kredit Langsung →
             </Link>
           </div>
 
-          {/* Risk reversal di hero */}
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             ✓ Tidak perlu kartu kredit &nbsp;·&nbsp; ✓ 1 kredit gratis saat daftar &nbsp;·&nbsp; ✓ Link aktif selamanya
           </p>
         </div>
@@ -87,10 +89,10 @@ export default async function LandingPage() {
 
       {/* ── VALUE STACK: "Yang Kamu Dapat" ── */}
       {/* Hormozi: tumpuk semua value dulu, baru reveal harga */}
-      <section id="yang-kamu-dapat" className="py-24 bg-gray-950">
+      <section id="yang-kamu-dapat" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">Semua sudah termasuk</p>
-          <h2 className="text-3xl md:text-4xl font-black text-center text-white mb-4">
+          <p className="text-center text-primary text-xs font-bold uppercase tracking-widest mb-3">Semua sudah termasuk</p>
+          <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
             Satu link. Delapan fitur.
           </h2>
           <p className="text-center text-gray-500 text-sm mb-14 max-w-xl mx-auto">
@@ -157,10 +159,10 @@ export default async function LandingPage() {
               },
             ].map(f => (
               <div key={f.title}
-                className="flex gap-4 bg-gray-900 border border-gray-800 rounded-2xl p-5 hover:border-amber-800/40 transition">
+                className="flex gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 hover:border-primary transition">
                 <span className="text-2xl shrink-0 mt-0.5">{f.icon}</span>
                 <div>
-                  <p className="font-bold text-white text-sm mb-1">{f.title}</p>
+                  <p className="font-bold text-gray-900 text-sm mb-1">{f.title}</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{f.value}</p>
                 </div>
               </div>
@@ -168,15 +170,15 @@ export default async function LandingPage() {
           </div>
 
           {/* Value stack reveal */}
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-3xl p-8 text-center">
-            <p className="text-gray-400 text-sm mb-2">11 hal di atas — fitur + hosting + domain + maintenance — dalam satu undangan</p>
-            <p className="text-5xl font-black text-white mb-1">
+          <div className="bg-primary-50 border border-primary rounded-3xl p-8 text-center">
+            <p className="text-gray-500 text-sm mb-2">11 hal di atas — fitur + hosting + domain + maintenance — dalam satu undangan</p>
+            <p className="text-5xl font-black text-gray-900 mb-1">
               {formatRupiah(pricePerUnit)}
               <span className="text-lg text-gray-500 font-normal">/undangan</span>
             </p>
-            <p className="text-amber-400 text-sm font-semibold mb-6">Paket Pro · {CREDIT_PACKS.PRO.credits} undangan seharga {formatRupiah(CREDIT_PACKS.PRO.price)}</p>
+            <p className="text-primary text-sm font-semibold mb-6">Paket Pro · {CREDIT_PACKS.PRO.credits} undangan seharga {formatRupiah(CREDIT_PACKS.PRO.price)}</p>
             <Link href={cta}
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-black px-8 py-3.5 rounded-2xl text-sm transition shadow-lg shadow-amber-500/20">
+              className="inline-flex items-center gap-2 btn-primary text-black font-black px-8 py-3.5 rounded-2xl text-sm transition shadow-lg shadow-primary">
               Coba Gratis Sekarang →
             </Link>
           </div>
@@ -186,11 +188,11 @@ export default async function LandingPage() {
       {/* ── HOW IT WORKS ── */}
       <section id="cara-kerja" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-600 text-xs font-bold uppercase tracking-widest mb-3">Semudah ini</p>
+          <p className="text-center text-primary-dark text-xs font-bold uppercase tracking-widest mb-3">Semudah ini</p>
           <h2 className="text-3xl font-black text-center text-gray-900 mb-14">Tiga langkah — undangan jadi</h2>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-8 left-[16.5%] right-[16.5%] h-0.5 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 z-0" />
+            <div className="hidden md:block absolute top-8 left-[16.5%] right-[16.5%] h-0.5 bg-gradient-to-r from-rose-100 via-rose-300 to-rose-100 z-0" />
             {[
               {
                 step: '1',
@@ -224,7 +226,7 @@ export default async function LandingPage() {
       {/* ── PRICING ── */}
       <section id="pricing" className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-amber-600 text-xs font-bold uppercase tracking-widest mb-3">Harga</p>
+          <p className="text-center text-primary-dark text-xs font-bold uppercase tracking-widest mb-3">Harga</p>
           <h2 className="text-3xl font-black text-center text-gray-900 mb-2">Pilih paket yang sesuai</h2>
           <p className="text-center text-gray-500 text-sm mb-12">
             1 kredit = 1 undangan penuh. Tidak ada biaya berlangganan. Tidak ada biaya tersembunyi.
@@ -235,11 +237,11 @@ export default async function LandingPage() {
               <div key={key}
                 className={`bg-white rounded-3xl p-7 border flex flex-col transition hover:shadow-lg ${
                   key === 'PRO'
-                    ? 'border-amber-400 ring-2 ring-amber-400 ring-offset-2 shadow-lg shadow-amber-100 scale-[1.02]'
+                    ? 'border-primary ring-2 ring-primary ring-offset-2 shadow-lg shadow-primary scale-[1.02]'
                     : 'border-gray-200'
                 }`}>
                 {key === 'PRO' && (
-                  <span className="text-xs font-black text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full self-start mb-4 uppercase tracking-wide">
+                  <span className="text-xs font-black text-primary-dark bg-primary-50 border border-primary px-3 py-1 rounded-full self-start mb-4 uppercase tracking-wide">
                     Paling Efisien
                   </span>
                 )}
@@ -277,7 +279,7 @@ export default async function LandingPage() {
                 <Link href={session ? '/settings' : '/register'}
                   className={`text-center font-black py-3.5 rounded-2xl text-sm transition ${
                     key === 'PRO'
-                      ? 'bg-amber-500 hover:bg-amber-400 text-black shadow-lg shadow-amber-200'
+                      ? 'btn-primary text-black shadow-lg shadow-primary'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                   }`}>
                   {session ? 'Beli Sekarang' : 'Daftar & Beli'}
@@ -287,7 +289,7 @@ export default async function LandingPage() {
           </div>
 
           <p className="text-center text-xs text-gray-400">
-            Tidak tahu mau mulai dari mana? <Link href={cta} className="text-amber-600 font-semibold hover:underline">Daftar gratis dulu</Link> — dapat 1 kredit langsung, tidak perlu kartu kredit.
+            Tidak tahu mau mulai dari mana? <Link href={cta} className="text-primary-dark font-semibold hover:underline">Daftar gratis dulu</Link> — dapat 1 kredit langsung, tidak perlu kartu kredit.
           </p>
         </div>
       </section>
@@ -309,7 +311,7 @@ export default async function LandingPage() {
             </div>
 
             {/* Urgency */}
-            <div className="bg-amber-50 border border-amber-200 rounded-3xl p-8">
+            <div className="bg-primary-50 border border-primary rounded-3xl p-8">
               <span className="text-2xl block mb-4">⚡</span>
               <h3 className="text-xl font-black text-gray-900 mb-3">Harga Beta</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -325,13 +327,13 @@ export default async function LandingPage() {
       {/* ── WO / RESELLER teaser ── */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-amber-50 border border-amber-200 rounded-2xl px-6 py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary-50 border border-primary rounded-2xl px-6 py-5">
             <div>
               <p className="font-bold text-gray-900 text-sm">Kamu WO atau event planner?</p>
               <p className="text-xs text-gray-500 mt-0.5">Ada halaman khusus untuk kamu yang mau jualan undangan ke klien.</p>
             </div>
             <Link href="/reseller"
-              className="shrink-0 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm px-5 py-2.5 rounded-xl transition whitespace-nowrap">
+              className="shrink-0 btn-primary text-black font-bold text-sm px-5 py-2.5 rounded-xl transition whitespace-nowrap">
               Lihat halaman reseller →
             </Link>
           </div>
@@ -339,42 +341,41 @@ export default async function LandingPage() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="relative overflow-hidden py-28"
-        style={{ background: 'linear-gradient(135deg,#0a0600 0%,#1a0900 50%,#0a0a0a 100%)' }}>
+      <section className="relative overflow-hidden py-28 bg-primary-50">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 rounded-full"
-            style={{ background: 'radial-gradient(circle,#f59e0b,transparent 60%)' }} />
+            style={{ background: 'radial-gradient(circle,var(--color-primary),transparent 60%)' }} />
         </div>
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
             Tamu kamu layak dapat<br />
-            <span className="text-amber-400">undangan yang berkesan.</span>
+            <span className="text-primary">undangan yang berkesan.</span>
           </h2>
           <p className="text-gray-500 text-base mb-10 leading-relaxed">
             Daftar sekarang. Dapat 1 kredit gratis. Buat undangan pertamamu hari ini.
           </p>
           <Link href={cta}
-            className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-black font-black px-12 py-5 rounded-2xl text-lg transition-all shadow-2xl shadow-amber-500/30 hover:scale-105">
+            className="inline-flex items-center gap-3 btn-primary text-black font-black px-12 py-5 rounded-2xl text-lg transition-all shadow-2xl shadow-primary hover:scale-105">
             Buat Undangan Gratis →
           </Link>
-          <p className="text-gray-700 text-xs mt-6">
+          <p className="text-gray-400 text-xs mt-6">
             ✓ Gratis · ✓ 1 kredit langsung · ✓ Tidak perlu kartu kredit
           </p>
         </div>
       </section>
 
       {/* ── Footer ── */}
-      <footer className="bg-black border-t border-gray-900 py-10">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+      <footer className="bg-gray-100 border-t border-gray-200 py-10">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="invitia.id" className="h-32 w-auto" />
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md">Beta</span>
+            <img src="/logo-black.png" alt="invitia.id" className="logo-themed h-24 w-auto" />
+            <span className="text-[10px] font-bold text-primary-dark bg-primary-50 border border-primary px-1.5 py-0.5 rounded-md">Beta</span>
           </div>
           <p>© {new Date().getFullYear()} invitia.id · Dibuat di Indonesia</p>
           <div className="flex items-center gap-4">
-            <Link href="/login"    className="hover:text-gray-400 transition">Masuk</Link>
-            <Link href="/register" className="hover:text-gray-400 transition">Daftar</Link>
-            <a href="#pricing"     className="hover:text-gray-400 transition">Harga</a>
+            <Link href="/login"    className="hover:text-gray-700 transition">Masuk</Link>
+            <Link href="/register" className="hover:text-gray-700 transition">Daftar</Link>
+            <a href="#pricing"     className="hover:text-gray-700 transition">Harga</a>
           </div>
         </div>
       </footer>

@@ -13,8 +13,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <aside className="w-56 shrink-0 bg-gray-900 border-r border-gray-800 flex flex-col">
         <div className="px-5 py-5 border-b border-gray-800">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="invitia.id" className="h-28 w-auto" />
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
+            <img src="/logo.png" alt="invitia.id" className="h-24 w-auto" />
+            <span className="text-[10px] font-bold text-rose-300 bg-rose-300/10 border border-rose-300/30 px-1.5 py-0.5 rounded-md tracking-wide">Beta</span>
           </div>
           <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">Super Admin</p>
         </div>
